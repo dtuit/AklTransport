@@ -1,4 +1,4 @@
-﻿using ATapi_csharp.Entities2;
+﻿using ATapi_csharp.Models;
 
 namespace ATapi_csharp.Response
 {

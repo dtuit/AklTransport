@@ -1,4 +1,4 @@
-﻿using Agency = ATapi_csharp.Entities2.Agency;
+﻿using Agency = ATapi_csharp.Models.Agency;
 
 namespace ATapi_csharp.Response
 {
