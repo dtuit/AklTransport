@@ -1,21 +1,15 @@
-﻿using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using RestSharp.Authenticators;
+using RestSharp;
 
-namespace ATapi_csharp
+namespace ATapi_csharp.Client
 {
     public abstract class ATClientBase
     {
-        public string ApiVersion { get; private set; }
-        public string BaseUrl { get; private set; }
+        public readonly string ApiVersion;
+        public readonly string BaseUrl;
         protected string AuthToken { get; set; }
-
-        private const string AuthHeader = "Ocp-Apim-Subscription-Key";
 
         protected RestClient Client;
 
@@ -28,10 +22,11 @@ namespace ATapi_csharp
             Client = new RestClient();
             Client.UserAgent = "ATapi-csharp";
             // add the auth token.
-            Client.AddDefaultHeader(AuthHeader, AuthToken);
+            Client.AddDefaultHeader("Ocp-Apim-Subscription-Key", AuthToken);
             //Client.AddDefaultParameter(AuthHeader, AuthToken, ParameterType.HttpHeader);
             Client.BaseUrl = new Uri(string.Format("{0}{1}", BaseUrl, ApiVersion));
 
+            //TODO determine appropriate timeout
             //Client.Timeout = 30500;
         }
 
@@ -49,16 +44,24 @@ namespace ATapi_csharp
             return response.Data;
         }
 
-        public virtual Task<T> ExecuteAsync<T>(IRestRequest request, CancellationToken cancellationToken) where T : new()
+        public virtual async Task<T> ExecuteGetAsync<T>(IRestRequest request, CancellationToken cancellationToken) where T : new()
         {
-            var response = Client.ExecuteGetTaskAsync<T>(request, cancellationToken);
-            var taskCompletionSource = new TaskCompletionSource<T>(response.Result.Data);
-            return taskCompletionSource.Task;
+            var response = await Client.ExecuteGetTaskAsync<T>(request, cancellationToken);
+            //TODO check this works
+            if (response.ErrorException != null)
+            {
+                const string message = "Error retrieving response.  Check inner details for more info.";
+                var ATException = new ApplicationException(message, response.ErrorException);
+                throw ATException;
+            }
+
+            return response.Data;
         }
 
-        public virtual Task<T> ExecuteAsync<T>(IRestRequest request) where T : new()
+        public virtual Task<T> ExecuteGetAsync<T>(IRestRequest request) where T : new()
         {
-            return this.ExecuteAsync<T>(request, CancellationToken.None);
+            return this.ExecuteGetAsync<T>(request, CancellationToken.None);
         }
+
     }
 }

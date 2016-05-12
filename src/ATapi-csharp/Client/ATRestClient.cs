@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ATapi_csharp
+﻿namespace ATapi_csharp.Client
 {
     public partial class ATRestClient : ATClientBase
     {
@@ -15,5 +10,7 @@ namespace ATapi_csharp
         public ATRestClient(string authToken, string baseUrl, string apiVerison) : base(authToken, baseUrl, apiVerison)
         {
         }
+
+
     }
 }
