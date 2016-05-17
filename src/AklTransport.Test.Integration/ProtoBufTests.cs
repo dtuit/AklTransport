@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using AklTransport.Client;
+using AklTransport.Models.RealTime;
 using AklTransport.Response;
 using ProtoBuf;
 using RestSharp;
-using transit_realtime;
 using Xunit;
 
 namespace MyFirstDnxUnitTests

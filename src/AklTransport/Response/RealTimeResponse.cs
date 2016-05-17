@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net;
-using transit_realtime;
 using FeedMessage = AklTransport.Models.RealTime.FeedMessage;
 
 namespace AklTransport.Response
