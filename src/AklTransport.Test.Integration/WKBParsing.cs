@@ -42,7 +42,7 @@ namespace MyFirstDnxUnitTests
         [Fact]
         public async void test1()
         {
-            var client = new ATRestClient(authToken);
+            var client = new ATGtfsClient(authToken);
             var result = await client.ListScheduledWorksAsync();
         }
 

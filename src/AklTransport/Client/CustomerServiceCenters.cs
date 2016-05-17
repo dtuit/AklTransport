@@ -5,7 +5,7 @@ using RestSharp;
 
 namespace AklTransport.Client
 {
-    public partial class ATRestClient
+    public partial class ATGtfsClient
     {
         public virtual async Task<CustomerServiceCentreResponse> ListCustomerServiceCentresAsync()
         {
