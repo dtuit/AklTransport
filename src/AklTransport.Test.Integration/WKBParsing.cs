@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
 using AklTransport.Client;
-using Geo.Geometries;
 using Geo.IO.GeoJson;
 using Geo.IO.Wkb;
+using MyFirstDnxUnitTests;
 using Newtonsoft.Json;
 using Xunit;
 using Polygon = GeoJSON.Net.Geometry.Polygon;
 
-namespace MyFirstDnxUnitTests
+namespace AklTransport.Test.Integration
 {
     public class WKBParsing
     {

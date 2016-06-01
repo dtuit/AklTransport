@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Net;
 using AklTransport.Client;
 using AklTransport.Models.RealTime;
@@ -9,7 +7,7 @@ using ProtoBuf;
 using RestSharp;
 using Xunit;
 
-namespace MyFirstDnxUnitTests
+namespace AklTransport.Test.Integration
 {
     public class ProtoBufTests
     {
