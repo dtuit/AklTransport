@@ -1,6 +1,6 @@
 #AklTransport - Auckland Transport Api CSharp Client
 
-AklTransport is a C# library for accessing the [Auckland Transport Api](https://dev-portal.at.govt.nz/)
+AklTransport is a C# library for accessing the [Auckland Transport Api](https://dev-portal.at.govt.nz/),
 uses RestSharp to perform all requests.
 
 ###Endpoints
@@ -11,7 +11,7 @@ uses RestSharp to perform all requests.
 
 ###Install
 
-**nuget** : 
+**nuget** : https://www.nuget.org/packages/AklTransport/
 
 ##How to Use
 You will need an API key. You can get one [here](https://dev-portal.at.govt.nz/)
@@ -41,5 +41,5 @@ You will need an API key. You can get one [here](https://dev-portal.at.govt.nz/)
 
 ###Dependencies 
 
-[RestSharp](https://github.com/restsharp/RestSharp)
-[ProtoBuf-net](https://github.com/mgravell/protobuf-net)
+* [RestSharp](https://github.com/restsharp/RestSharp)
+* [ProtoBuf-net](https://github.com/mgravell/protobuf-net)

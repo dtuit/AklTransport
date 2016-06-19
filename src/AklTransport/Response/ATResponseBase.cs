@@ -3,6 +3,17 @@ using System.Net;
 using RestSharp.Deserializers;
 
 namespace AklTransport.Response
+
+
+
+
+
+
+
+
+
+
+
 {
     public abstract class ATResponseBase<T>
     {

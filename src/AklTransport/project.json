@@ -1,10 +1,11 @@
 {
   "version": "1.0.0-*",
-  "description": "ATapi-csharp Class Library",
-  "authors": [ "Darren" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
+  "description": "library for accessing the Auckland Transport public GTFS and GTFS-Realtime apis.",
+  "authors": [ "darrentuit" ],
+  "tags": [ "Auckland Transport Api, AklTransport, GTFS, GTFS-Realtime, Auckland Buses" ],
+  "projectUrl": "https://github.com/dtuit/AklTransport",
+  "licenseUrl": "https://github.com/dtuit/AklTransport/blob/master/LICENSE",
+  "title": "AklTransport",
   "frameworks": {
     "net451": {
       "frameworkAssemblies": {
