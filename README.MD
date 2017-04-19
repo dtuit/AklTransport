@@ -1,22 +1,22 @@
-#AklTransport - Auckland Transport Api CSharp Client
+# AklTransport - Auckland Transport Api CSharp Client
 
 AklTransport is a C# library for accessing the [Auckland Transport Api](https://dev-portal.at.govt.nz/),
 uses RestSharp to perform all requests.
 
-###Endpoints
+### Endpoints
 
 * Realtime GTFS
 * Static GTFS
 * Display Data
 
-###Install
+### Install
 
 **nuget** : https://www.nuget.org/packages/AklTransport/
 
-##How to Use
+## How to Use
 You will need an API key. You can get one [here](https://dev-portal.at.govt.nz/)
 
-####Static GTFS and Display Data
+#### Static GTFS and Display Data
 ```c#
     var GtfsClient = new ATGtfsClient("API_KEY");
 
@@ -30,7 +30,7 @@ You will need an API key. You can get one [here](https://dev-portal.at.govt.nz/)
     
 ```
 
-####RealTime GTFS
+#### RealTime GTFS
 
 ```c#
     var RealTimeClient = new ATRealTimeClient("API_KEY");
@@ -39,7 +39,7 @@ You will need an API key. You can get one [here](https://dev-portal.at.govt.nz/)
     FeedMessage realTimeFeed = await RealTimeClient.GetGTFSRealTimeFeed();
 ```
 
-###Dependencies 
+### Dependencies 
 
 * [RestSharp](https://github.com/restsharp/RestSharp)
 * [ProtoBuf-net](https://github.com/mgravell/protobuf-net)
